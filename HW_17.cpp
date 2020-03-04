@@ -7,17 +7,26 @@
 class Vector
 {
 public:
-    Vector() : x(5), y(5), z(5)
-    {}
- 
+    Vector(): x(), y(), z()
+    {
+        std::cout << "Enter X: ";
+        std::cin >> x;
+        std::cout << "Enter Y: ";
+        std::cin >> y;
+        std::cout << "Enter Z: ";
+        std::cin >> z;
+    }
+
     void PublicMethodForShowing()
     {
-        std::cout <<'\n'<< x << ' ' << y << ' ' << z;
+        std::cout <<'\n'<< x << ' ' << y << ' ' << z<<"\n";
     }
     void ModuleOfVector()
     {
-        std::cout << '\n' << sqrt((pow(x,2)) + (pow(y, 2)) + (pow(z, 2)));
+        std::cout<<"\n"<<"Module of Vector = "  << sqrt((pow(x,2)) + (pow(y, 2)) + (pow(z, 2)))<<"\n";
     }
+
+
 private:
     double x;
     double y;
@@ -28,9 +37,6 @@ int main()
 {
     Vector v;
     v.PublicMethodForShowing();
-
-    Vector m;
-    m.ModuleOfVector();
-    
+    v.ModuleOfVector();
 }
 
